@@ -1,52 +1,52 @@
-class Camera {
+class Watch {
 
     int id;
     String brand;
     String model;
     double price;
     String type;
-    int megapixel;
-    String lensType;
     String color;
-    boolean isDigital;
+    String material;
+    boolean isWaterproof;
     String warranty;
+    String displayType;
     String country;
-    boolean isAvailable;
+    boolean isSmart;
 
-  
-    public Camera(int id, String brand, String model, double price,
-                  String type, int megapixel, String lensType,
-                  String color, boolean isDigital,
-                  String warranty, String country, boolean isAvailable) {
+   
+    public Watch(int id, String brand, String model, double price,
+                 String type, String color, String material,
+                 boolean isWaterproof, String warranty,
+                 String displayType, String country, boolean isSmart) {
 
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.price = price;
         this.type = type;
-        this.megapixel = megapixel;
-        this.lensType = lensType;
         this.color = color;
-        this.isDigital = isDigital;
+        this.material = material;
+        this.isWaterproof = isWaterproof;
         this.warranty = warranty;
+        this.displayType = displayType;
         this.country = country;
-        this.isAvailable = isAvailable;
+        this.isSmart = isSmart;
     }
 
     public void display() {
-        System.out.println("Camera Details:");
+        System.out.println("Watch Details:");
         
         System.out.println("ID: " + id);
         System.out.println("Brand: " + brand);
         System.out.println("Model: " + model);
         System.out.println("Price: " + price);
         System.out.println("Type: " + type);
-        System.out.println("Megapixel: " + megapixel);
-        System.out.println("Lens Type: " + lensType);
         System.out.println("Color: " + color);
-        System.out.println("Digital: " + isDigital);
+        System.out.println("Material: " + material);
+        System.out.println("Waterproof: " + isWaterproof);
         System.out.println("Warranty: " + warranty);
+        System.out.println("Display Type: " + displayType);
         System.out.println("Country: " + country);
-        System.out.println("Available: " + isAvailable);
+        System.out.println("Smart Watch: " + isSmart);
     }
 }
