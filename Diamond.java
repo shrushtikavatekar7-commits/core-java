@@ -1,16 +1,16 @@
-class Coffee {
+class Diamond {
 
     int id;
     String type;
     double price;
 
-    public Coffee(int id, String type, double price) {
+    public Diamond(int id, String type, double price) {
         this.id = id;
         this.type = type;
         this.price = price;
     }
 
     public void display() {
-        System.out.println("Coffee: " + id + " " + type + " " + price);
+        System.out.println("Diamond: " + id + " " + type + " " + price);
     }
 }
