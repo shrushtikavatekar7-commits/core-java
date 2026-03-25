@@ -1,14 +1,26 @@
-class UniverseExecutor {
+class UniverseExecutor{
+	public static void main(String[] args){
 
-    public static void main(String[] args) {
+		Universe universe = new Universe();
 
-        Earth e1 = new Earth(1,"Planet","Life Exists");
-        Universe u1 = new Universe(101,"Milky Way",e1);
+		universe.addGalaxy("Milky Way");
+		universe.addGalaxy("Andromeda");
+		universe.addGalaxy("Triangulum");
+		universe.addGalaxy("Whirlpool Galaxy");
+		universe.addGalaxy("Sombrero Galaxy");
+		universe.addGalaxy("Pinwheel Galaxy");
+		universe.addGalaxy("Cartwheel Galaxy");
+		universe.addGalaxy("Cigar Galaxy");
+		universe.addGalaxy("Black Eye Galaxy");
+		universe.addGalaxy("Sunflower Galaxy");
+		universe.addGalaxy("Centaurus A");
+		universe.addGalaxy("Messier 81");
+		universe.addGalaxy("Messier 82");
+		universe.addGalaxy("NGC 1300");
+		universe.addGalaxy("NGC 6744");
+		universe.addGalaxy("IC 1101");
+		universe.addGalaxy("Large Magellanic Cloud");
 
-        Earth e2 = new Earth(2,"Planet","Habitable");
-        Universe u2 = new Universe(102,"Galaxy",e2);
-
-        u1.display();
-        u2.display();
-    }
+		universe.getGalaxies();
+	}
 }

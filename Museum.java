@@ -1,18 +1,26 @@
 class Museum {
 
-    int id;
-    String name;
-    Diamond diamond;   
+	private String historicalMonuments[] = new String[16];
+	int index;
 
-    public Museum(int id, String name, Diamond diamond) {
-        this.id = id;
-        this.name = name;
-        this.diamond = diamond;
-    }
+	public boolean addHistoricalMonument(String monument){
+		boolean isAdded = false;
 
-    public void display() {
-        System.out.println("Museum: " + id + " " + name);
-        diamond.display();
-        System.out.println("-------------------");
-    }
+		if(monument != null && !monument.isEmpty()){
+			historicalMonuments[index] = monument;
+			index++;
+			isAdded = true;
+		}
+		else{
+			System.out.println(monument + " is invalid");
+		}
+
+		return isAdded;
+	}
+
+	public void getHistoricalMonuments(){
+		for(String historicalMonument : historicalMonuments){
+			System.out.println(historicalMonument);
+		}
+	}
 }

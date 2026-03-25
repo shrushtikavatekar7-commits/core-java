@@ -1,18 +1,26 @@
 class Universe {
 
-    int id;
-    String name;
-    Earth earth;   // HAS-A
+	private String galaxies[] = new String[17];
+	int index;
 
-    public Universe(int id, String name, Earth earth) {
-        this.id = id;
-        this.name = name;
-        this.earth = earth;
-    }
+	public boolean addGalaxy(String galaxy){
+		boolean isAdded = false;
 
-    public void display() {
-        System.out.println("Universe: " + id + " " + name);
-        earth.display();
-        System.out.println("-------------------");
-    }
+		if(galaxy != null && !galaxy.isEmpty()){
+			galaxies[index] = galaxy;
+			index++;
+			isAdded = true;
+		}
+		else{
+			System.out.println(galaxy + " is invalid");
+		}
+
+		return isAdded;
+	}
+
+	public void getGalaxies(){
+		for(String galaxy : galaxies){
+			System.out.println(galaxy);
+		}
+	}
 }

@@ -1,14 +1,25 @@
 class MuseumExecutor {
+	public static void main(String[] args){
 
-    public static void main(String[] args) {
+		Museum museum = new Museum();
 
-        Diamond d1 = new Diamond(1,"Kohinoor",1000000);
-        Museum m1 = new Museum(101,"National Museum",d1);
+		museum.addHistoricalMonument("Taj Mahal");
+		museum.addHistoricalMonument("Qutub Minar");
+		museum.addHistoricalMonument("Red Fort");
+		museum.addHistoricalMonument("Hampi");
+		museum.addHistoricalMonument("Mysore Palace");
+		museum.addHistoricalMonument("Charminar");
+		museum.addHistoricalMonument("India Gate");
+		museum.addHistoricalMonument("Gateway of India");
+		museum.addHistoricalMonument("Ajanta Caves");
+		museum.addHistoricalMonument("Ellora Caves");
+		museum.addHistoricalMonument("Sun Temple");
+		museum.addHistoricalMonument("Konark Temple");
+		museum.addHistoricalMonument("Meenakshi Temple");
+		museum.addHistoricalMonument("Gol Gumbaz");
+		museum.addHistoricalMonument("Sanchi Stupa");
+		museum.addHistoricalMonument("Fatehpur Sikri");
 
-        Diamond d2 = new Diamond(2,"Blue Diamond",800000);
-        Museum m2 = new Museum(102,"City Museum",d2);
-
-        m1.display();
-        m2.display();
-    }
+		museum.getHistoricalMonuments();
+	}
 }

@@ -1,18 +1,26 @@
 class Government {
 
-    int id;
-    String country;
-    Policy policy;   // HAS-A
+	private String competitiveExamNames[] = new String[9];
+	int index;
 
-    public Government(int id, String country, Policy policy) {
-        this.id = id;
-        this.country = country;
-        this.policy = policy;
-    }
+	public boolean addExamName(String examName){
+		boolean isAdded = false;
 
-    public void display() {
-        System.out.println("Government: " + id + " " + country);
-        policy.display();
-        System.out.println("-------------------");
-    }
+		if(examName != null && !examName.isEmpty()){
+			competitiveExamNames[index] = examName;
+			index++;
+			isAdded = true;
+		}
+		else{
+			System.out.println(examName + " is invalid");
+		}
+
+		return isAdded;
+	}
+
+	public void getExamNames(){
+		for(String exam : competitiveExamNames){
+			System.out.println(exam);
+		}
+	}
 }

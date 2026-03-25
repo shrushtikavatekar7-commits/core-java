@@ -1,14 +1,29 @@
 class WonderlaExecutor {
+	public static void main(String[] args){
 
-    public static void main(String[] args) {
+		Wonderla wonderla = new Wonderla();
 
-        LazyPool l1 = new LazyPool(1,"Wave Pool",100);
-        Wonderla w1 = new Wonderla(101,"Bangalore",l1);
+		wonderla.addWaterGame("Wave Pool");
+		wonderla.addWaterGame("Lazy River");
+		wonderla.addWaterGame("Rain Disco");
+		wonderla.addWaterGame("Water Slides");
+		wonderla.addWaterGame("Boomerang");
+		wonderla.addWaterGame("Harakiri");
+		wonderla.addWaterGame("Cyclone");
+		wonderla.addWaterGame("Aqua Loop");
+		wonderla.addWaterGame("Drop Loop");
+		wonderla.addWaterGame("Splash Pool");
+		wonderla.addWaterGame("Kids Play Pool");
+		wonderla.addWaterGame("Twister Slides");
+		wonderla.addWaterGame("Multi Lane Slides");
+		wonderla.addWaterGame("Family Pool");
+		wonderla.addWaterGame("Wave Rider");
+		wonderla.addWaterGame("Crazy River");
+		wonderla.addWaterGame("Aqua Park");
+		wonderla.addWaterGame("Fun Slides");
+		wonderla.addWaterGame("Rapid River");
+		wonderla.addWaterGame("Mini Slides");
 
-        LazyPool l2 = new LazyPool(2,"Kids Pool",50);
-        Wonderla w2 = new Wonderla(102,"Hyderabad",l2);
-
-        w1.display();
-        w2.display();
-    }
+		wonderla.getWaterGames();
+	}
 }
