@@ -1,26 +1,50 @@
 class Government {
 
-	private String competitiveExamNames[] = new String[9];
-	int index;
+    String competitiveExamNames[] = new String[9];
+    int index;
 
-	public boolean addExamName(String examName){
-		boolean isAdded = false;
+    public boolean addExam(String name) {
+        boolean isAdded = false;
 
-		if(examName != null && !examName.isEmpty()){
-			competitiveExamNames[index] = examName;
-			index++;
-			isAdded = true;
-		}
-		else{
-			System.out.println(examName + " is invalid");
-		}
+        if (index < competitiveExamNames.length) {
+            if (name != null && !name.isEmpty()) {
+                competitiveExamNames[index] = name;
+                index++;
+                isAdded = true;
+            }
+        }
+        return isAdded;
+    }
 
-		return isAdded;
-	}
+    public void getAllExams() {
+        for (String e : competitiveExamNames) {
+            if (e != null) {
+                System.out.println(e);
+            }
+        }
+    }
 
-	public void getExamNames(){
-		for(String exam : competitiveExamNames){
-			System.out.println(exam);
-		}
-	}
+    public boolean updateExam(String oldName, String newName) {
+        boolean isUpdated = false;
+
+        for (int i = 0; i < competitiveExamNames.length; i++) {
+            if (competitiveExamNames[i] != null && competitiveExamNames[i].equals(oldName)) {
+                competitiveExamNames[i] = newName;
+                isUpdated = true;
+            }
+        }
+        return isUpdated;
+    }
+
+    public boolean deleteExam(String name) {
+        boolean isDeleted = false;
+
+        for (int i = 0; i < competitiveExamNames.length; i++) {
+            if (competitiveExamNames[i] != null && competitiveExamNames[i].equals(name)) {
+                competitiveExamNames[i] = null;
+                isDeleted = true;
+            }
+        }
+        return isDeleted;
+    }
 }

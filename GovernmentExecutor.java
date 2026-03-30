@@ -1,18 +1,21 @@
 class GovernmentExecutor {
-	public static void main(String[] args){
 
-		Government govt = new Government();
+    public static void main(String[] args) {
 
-		govt.addExamName("UPSC");
-		govt.addExamName("KPSC");
-		govt.addExamName("SSC");
-		govt.addExamName("IBPS PO");
-		govt.addExamName("IBPS Clerk");
-		govt.addExamName("RRB NTPC");
-		govt.addExamName("RRB Group D");
-		govt.addExamName("NDA");
-		govt.addExamName("CDS");
+        Government gov = new Government();
 
-		govt.getExamNames();
-	}
+        gov.addExam("UPSC");
+        gov.addExam("SSC");
+        gov.addExam("Bank PO");
+
+        gov.getAllExams();
+
+        gov.updateExam("SSC", "Railway");
+
+        gov.getAllExams();
+
+        gov.deleteExam("UPSC");
+
+        gov.getAllExams();
+    }
 }

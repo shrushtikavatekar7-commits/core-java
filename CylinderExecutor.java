@@ -1,14 +1,30 @@
-public class CylinderExecutor {
+class CylinderExecutor {
 
     public static void main(String[] args) {
 
-        Cylinder c1 = new Cylinder();
-        c1.display();
+        Cylinder c = new Cylinder();
 
-        Cylinder c2 = new Cylinder(90);
-        c2.display();
+        c.addCylinder("HP");
+        c.addCylinder("Indane");
+        c.addCylinder("Bharat");
+        c.addCylinder("Total");
+        c.addCylinder("Shell");
+        c.addCylinder("Reliance");
+        c.addCylinder("Adani");
+        c.addCylinder("Essar");
+        c.addCylinder("GasOne");
+        c.addCylinder("SuperGas");
 
-        Cylinder c3 = new Cylinder(100, "Gas Cylinder");
-        c3.display();
+        c.getAllCylinders();
+
+        System.out.println("Index: " + c.searchCylinder("Shell"));
+
+        c.updateCylinder("Shell", "NewShell");
+
+        c.getAllCylinders();
+
+        c.deleteCylinder("HP");
+
+        c.getAllCylinders();
     }
 }

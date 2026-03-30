@@ -1,26 +1,21 @@
 class TravelAgencyExecutor {
-	public static void main(String[] args){
 
-		TravelAgency agency = new TravelAgency();
+    public static void main(String[] args) {
 
-		agency.addPlace("Paris");
-		agency.addPlace("London");
-		agency.addPlace("New York");
-		agency.addPlace("Dubai");
-		agency.addPlace("Singapore");
-		agency.addPlace("Maldives");
-		agency.addPlace("Bali");
-		agency.addPlace("Thailand");
-		agency.addPlace("Switzerland");
-		agency.addPlace("Italy");
-		agency.addPlace("Spain");
-		agency.addPlace("Germany");
-		agency.addPlace("Australia");
-		agency.addPlace("Canada");
-		agency.addPlace("Japan");
-		agency.addPlace("South Korea");
-		agency.addPlace("Turkey");
+        TravelAgency t = new TravelAgency();
 
-		agency.getPlaces();
-	}
+        t.addPlace("Goa");
+        t.addPlace("Manali");
+        t.addPlace("Ooty");
+
+        t.getAllPlaces();
+
+        t.updatePlace("Manali", "Kashmir");
+
+        t.getAllPlaces();
+
+        t.deletePlace("Goa");
+
+        t.getAllPlaces();
+    }
 }
