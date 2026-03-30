@@ -1,17 +1,28 @@
 class CricBuzExecutor {
-	public static void main(String[] args){
 
-		CricBuz cricbuz = new CricBuz();
+    public static void main(String[] args) {
 
-		cricbuz.addTeamName("India");
-		cricbuz.addTeamName("Australia");
-		cricbuz.addTeamName("England");
-		cricbuz.addTeamName("South Africa");
-		cricbuz.addTeamName("New Zealand");
-		cricbuz.addTeamName("Pakistan");
-		cricbuz.addTeamName("Sri Lanka");
-		cricbuz.addTeamName("West Indies");
+        CricBuz cric = new CricBuz();
 
-		cricbuz.getTeamNames();
-	}
+        cric.addTeam("RCB");
+        cric.addTeam("MI");
+        cric.addTeam("CSK");
+
+        System.out.println("All Teams:");
+        cric.getAllTeams();
+
+        System.out.println("-----------");
+
+        cric.updateTeam("MI", "KKR");
+
+        System.out.println("After Update:");
+        cric.getAllTeams();
+
+        System.out.println("-----------");
+
+        cric.deleteTeam("RCB");
+
+        System.out.println("After Delete:");
+        cric.getAllTeams();
+    }
 }

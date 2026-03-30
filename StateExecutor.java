@@ -1,18 +1,21 @@
 class StateExecutor {
-	public static void main(String[] args){
 
-		State state = new State();
+    public static void main(String[] args) {
 
-		state.addHighwayName("NH 44");
-		state.addHighwayName("NH 48");
-		state.addHighwayName("NH 75");
-		state.addHighwayName("NH 275");
-		state.addHighwayName("NH 50");
-		state.addHighwayName("NH 67");
-		state.addHighwayName("NH 73");
-		state.addHighwayName("NH 150A");
-		state.addHighwayName("NH 766");
+        State state = new State();
 
-		state.getHighwayNames();
-	}
+        state.addHighway("NH44");
+        state.addHighway("NH48");
+        state.addHighway("NH75");
+
+        state.getAllHighways();
+
+        state.updateHighway("NH48", "NH50");
+
+        state.getAllHighways();
+
+        state.deleteHighway("NH44");
+
+        state.getAllHighways();
+    }
 }

@@ -1,24 +1,28 @@
 class PlayListExecutor {
-	public static void main(String[] args){
 
-		PlayList playList = new PlayList();
+    public static void main(String[] args) {
 
-		playList.addSongName("Shape of You");
-		playList.addSongName("Blinding Lights");
-		playList.addSongName("Believer");
-		playList.addSongName("Closer");
-		playList.addSongName("Levitating");
-		playList.addSongName("Senorita");
-		playList.addSongName("Perfect");
-		playList.addSongName("Faded");
-		playList.addSongName("On My Way");
-		playList.addSongName("Attention");
-		playList.addSongName("Havana");
-		playList.addSongName("Girls Like You");
-		playList.addSongName("Stay");
-		playList.addSongName("Peaches");
-		playList.addSongName("Memories");
+        PlayList list = new PlayList();
 
-		playList.getSongNames();
-	}
+        list.addSong("Shape of You");
+        list.addSong("Believer");
+        list.addSong("Kesariya");
+
+        System.out.println("All Songs:");
+        list.getAllSongs();
+
+        System.out.println("-----------");
+
+        list.updateSong("Believer", "Perfect");
+
+        System.out.println("After Update:");
+        list.getAllSongs();
+
+        System.out.println("-----------");
+
+        list.deleteSong("Shape of You");
+
+        System.out.println("After Delete:");
+        list.getAllSongs();
+    }
 }

@@ -1,26 +1,50 @@
 class TravelAgency {
 
-	private String places[] = new String[17];
-	int index;
+    String places[] = new String[17];
+    int index;
 
-	public boolean addPlace(String place){
-		boolean isAdded = false;
+    public boolean addPlace(String name) {
+        boolean isAdded = false;
 
-		if(place != null && !place.isEmpty()){
-			places[index] = place;
-			index++;
-			isAdded = true;
-		}
-		else{
-			System.out.println(place + " is invalid");
-		}
+        if (index < places.length) {
+            if (name != null && !name.isEmpty()) {
+                places[index] = name;
+                index++;
+                isAdded = true;
+            }
+        }
+        return isAdded;
+    }
 
-		return isAdded;
-	}
+    public void getAllPlaces() {
+        for (String p : places) {
+            if (p != null) {
+                System.out.println(p);
+            }
+        }
+    }
 
-	public void getPlaces(){
-		for(String place : places){
-			System.out.println(place);
-		}
-	}
+    public boolean updatePlace(String oldName, String newName) {
+        boolean isUpdated = false;
+
+        for (int i = 0; i < places.length; i++) {
+            if (places[i] != null && places[i].equals(oldName)) {
+                places[i] = newName;
+                isUpdated = true;
+            }
+        }
+        return isUpdated;
+    }
+
+    public boolean deletePlace(String name) {
+        boolean isDeleted = false;
+
+        for (int i = 0; i < places.length; i++) {
+            if (places[i] != null && places[i].equals(name)) {
+                places[i] = null;
+                isDeleted = true;
+            }
+        }
+        return isDeleted;
+    }
 }

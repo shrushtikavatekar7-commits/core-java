@@ -1,26 +1,50 @@
 class Museum {
 
-	private String historicalMonuments[] = new String[16];
-	int index;
+    String historicalMonuments[] = new String[16];
+    int index;
 
-	public boolean addHistoricalMonument(String monument){
-		boolean isAdded = false;
+    public boolean addMonument(String name) {
+        boolean isAdded = false;
 
-		if(monument != null && !monument.isEmpty()){
-			historicalMonuments[index] = monument;
-			index++;
-			isAdded = true;
-		}
-		else{
-			System.out.println(monument + " is invalid");
-		}
+        if (index < historicalMonuments.length) {
+            if (name != null && !name.isEmpty()) {
+                historicalMonuments[index] = name;
+                index++;
+                isAdded = true;
+            }
+        }
+        return isAdded;
+    }
 
-		return isAdded;
-	}
+    public void getAllMonuments() {
+        for (String m : historicalMonuments) {
+            if (m != null) {
+                System.out.println(m);
+            }
+        }
+    }
 
-	public void getHistoricalMonuments(){
-		for(String historicalMonument : historicalMonuments){
-			System.out.println(historicalMonument);
-		}
-	}
+    public boolean updateMonument(String oldName, String newName) {
+        boolean isUpdated = false;
+
+        for (int i = 0; i < historicalMonuments.length; i++) {
+            if (historicalMonuments[i] != null && historicalMonuments[i].equals(oldName)) {
+                historicalMonuments[i] = newName;
+                isUpdated = true;
+            }
+        }
+        return isUpdated;
+    }
+
+    public boolean deleteMonument(String name) {
+        boolean isDeleted = false;
+
+        for (int i = 0; i < historicalMonuments.length; i++) {
+            if (historicalMonuments[i] != null && historicalMonuments[i].equals(name)) {
+                historicalMonuments[i] = null;
+                isDeleted = true;
+            }
+        }
+        return isDeleted;
+    }
 }

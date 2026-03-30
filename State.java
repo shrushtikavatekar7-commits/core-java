@@ -1,26 +1,50 @@
 class State {
 
-	private String highwayNames[] = new String[9];
-	int index;
+    String highwayNames[] = new String[9];
+    int index;
 
-	public boolean addHighwayName(String highwayName){
-		boolean isAdded = false;
+    public boolean addHighway(String name) {
+        boolean isAdded = false;
 
-		if(highwayName != null && !highwayName.isEmpty()){
-			highwayNames[index] = highwayName;
-			index++;
-			isAdded = true;
-		}
-		else{
-			System.out.println(highwayName + " is invalid");
-		}
+        if (index < highwayNames.length) {
+            if (name != null && !name.isEmpty()) {
+                highwayNames[index] = name;
+                index++;
+                isAdded = true;
+            }
+        }
+        return isAdded;
+    }
 
-		return isAdded;
-	}
+    public void getAllHighways() {
+        for (String h : highwayNames) {
+            if (h != null) {
+                System.out.println(h);
+            }
+        }
+    }
 
-	public void getHighwayNames(){
-		for(String highway : highwayNames){
-			System.out.println(highway);
-		}
-	}
+    public boolean updateHighway(String oldName, String newName) {
+        boolean isUpdated = false;
+
+        for (int i = 0; i < highwayNames.length; i++) {
+            if (highwayNames[i] != null && highwayNames[i].equals(oldName)) {
+                highwayNames[i] = newName;
+                isUpdated = true;
+            }
+        }
+        return isUpdated;
+    }
+
+    public boolean deleteHighway(String name) {
+        boolean isDeleted = false;
+
+        for (int i = 0; i < highwayNames.length; i++) {
+            if (highwayNames[i] != null && highwayNames[i].equals(name)) {
+                highwayNames[i] = null;
+                isDeleted = true;
+            }
+        }
+        return isDeleted;
+    }
 }
