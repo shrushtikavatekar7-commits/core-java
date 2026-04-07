@@ -1,15 +1,17 @@
-class LinkedIn {
+class Zepto {
 
-    LinkedInAccount linkedInAccount;
+    ZeptoAccount zeptoaccount;
 
     String uName;
 
-    public boolean createUserAccount(LinkedInAccount userAccount) {
+    public boolean createUserAccount(ZeptoAccount userAccount) {
 
         boolean isUserAccountCreated = false;
 
         boolean isUserIdValid = false;
+
         boolean isUserNameValid = false;
+
         boolean isEmailValid = false;
 
         int uId = userAccount.getUserId();
@@ -33,13 +35,13 @@ class LinkedIn {
 
         if (isUserIdValid && isUserNameValid && isEmailValid) {
 
-            this.linkedInAccount = userAccount;
+            this.zeptoaccount = userAccount;
 
             isUserAccountCreated = true;
 
         } else {
 
-            System.out.println("Invalid LinkedIn account details");
+            System.out.println("Invalid Zepto account details");
         }
 
         return isUserAccountCreated;
@@ -47,13 +49,13 @@ class LinkedIn {
 
     public void getUserDetails() {
 
-        if (linkedInAccount != null) {
+        if (zeptoaccount != null) {
 
-            System.out.println("user id is " + linkedInAccount.getUserId());
+            System.out.println("user id is " + zeptoaccount.getUserId());
 
-            System.out.println("user name is " + linkedInAccount.getUserName());
+            System.out.println("user name is " + zeptoaccount.getUserName());
 
-            System.out.println("user email is " + linkedInAccount.getEmail());
+            System.out.println("user email is " + zeptoaccount.getEmail());
 
         } else {
 

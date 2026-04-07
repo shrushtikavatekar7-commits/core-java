@@ -1,10 +1,10 @@
-class LinkedIn {
+class Apna {
 
-    LinkedInAccount linkedInAccount;
+    ApnaAccount apnaAccount;
 
     String uName;
 
-    public boolean createUserAccount(LinkedInAccount userAccount) {
+    public boolean createUserAccount(ApnaAccount userAccount) {
 
         boolean isUserAccountCreated = false;
 
@@ -33,13 +33,13 @@ class LinkedIn {
 
         if (isUserIdValid && isUserNameValid && isEmailValid) {
 
-            this.linkedInAccount = userAccount;
+            this.apnaAccount = userAccount;
 
             isUserAccountCreated = true;
 
         } else {
 
-            System.out.println("Invalid LinkedIn account details");
+            System.out.println("Invalid Apna account details");
         }
 
         return isUserAccountCreated;
@@ -47,13 +47,13 @@ class LinkedIn {
 
     public void getUserDetails() {
 
-        if (linkedInAccount != null) {
+        if (apnaAccount != null) {
 
-            System.out.println("user id is " + linkedInAccount.getUserId());
+            System.out.println("user id is " + apnaAccount.getUserId());
 
-            System.out.println("user name is " + linkedInAccount.getUserName());
+            System.out.println("user name is " + apnaAccount.getUserName());
 
-            System.out.println("user email is " + linkedInAccount.getEmail());
+            System.out.println("user email is " + apnaAccount.getEmail());
 
         } else {
 

@@ -1,13 +1,11 @@
-class LinkedIn {
+class Flipkart {
 
-    LinkedInAccount linkedInAccount;
-
+    FlipkartAccount flipkartAccount;
     String uName;
 
-    public boolean createUserAccount(LinkedInAccount userAccount) {
+    public boolean createUserAccount(FlipkartAccount userAccount) {
 
         boolean isUserAccountCreated = false;
-
         boolean isUserIdValid = false;
         boolean isUserNameValid = false;
         boolean isEmailValid = false;
@@ -32,14 +30,10 @@ class LinkedIn {
         }
 
         if (isUserIdValid && isUserNameValid && isEmailValid) {
-
-            this.linkedInAccount = userAccount;
-
+            this.flipkartAccount = userAccount;
             isUserAccountCreated = true;
-
         } else {
-
-            System.out.println("Invalid LinkedIn account details");
+            System.out.println("Invalid Flipkart account details");
         }
 
         return isUserAccountCreated;
@@ -47,16 +41,11 @@ class LinkedIn {
 
     public void getUserDetails() {
 
-        if (linkedInAccount != null) {
-
-            System.out.println("user id is " + linkedInAccount.getUserId());
-
-            System.out.println("user name is " + linkedInAccount.getUserName());
-
-            System.out.println("user email is " + linkedInAccount.getEmail());
-
+        if (flipkartAccount != null) {
+            System.out.println("user id is " + flipkartAccount.getUserId());
+            System.out.println("user name is " + flipkartAccount.getUserName());
+            System.out.println("user email is " + flipkartAccount.getEmail());
         } else {
-
             System.out.println("No user account found");
         }
     }
