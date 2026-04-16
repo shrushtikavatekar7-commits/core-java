@@ -1,55 +1,55 @@
-class PVR {
+class PVR{
 
-    int id;
-    String location;
-    int screens;
-    String movie;
-    double ticketPrice;
-    String timing;
-    String seatType;
-    boolean isIMAX;
-    String food;
-    String city;
-    String state;
-    String country;
-    int capacity;
-    double rating;
-    String manager;
-    String soundSystem;
-    String screenType;
-    String bookingMode;
-    String language;
-    String facility;
-
-    public PVR(int id, String location, int screens, String movie, double ticketPrice,
-               String timing, String seatType, boolean isIMAX, String food,
-               String city, String state, String country, int capacity,
-               double rating, String manager, String soundSystem,
-               String screenType, String bookingMode, String language, String facility) {
-
-        this.id = id;
-        this.location = location;
-        this.screens = screens;
-        this.movie = movie;
-        this.ticketPrice = ticketPrice;
-        this.timing = timing;
-        this.seatType = seatType;
-        this.isIMAX = isIMAX;
-        this.food = food;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.capacity = capacity;
-        this.rating = rating;
-        this.manager = manager;
-        this.soundSystem = soundSystem;
-        this.screenType = screenType;
-        this.bookingMode = bookingMode;
-        this.language = language;
-        this.facility = facility;
+    int pvrId;
+    String pvrName;
+    Screen screen 
+	
+	PVR(int pvrId,String pvrName,Screen screen ){
+	this.pvrId=pvrId
+	   this.pvrName = pvrName;
+        this.screen = screen;
     }
 
-    public void display() {
-        System.out.println("PVR: " + id + " " + location + " " + movie + " " + ticketPrice);
+public boolean savePvr(Screen screen ) {
+
+        System.out.println("Parameter screen visible : " + screen );
+        System.out.println("Instance screen avaiable: " + this.screen);
+
+        boolean isSaved = false;
+
+        boolean isPriceValid = false;
+        boolean isSeatsValid = false;
+        boolean isTypeValid = false;
+		
+		 if (screen != null) {
+
+            if (screen.seats > 0) {
+                isSeatsValid = true;
+            }
+
+            if (screen.type != null && !screen.type.isEmpty()) {
+                isTypeValid = true;
+            }
+
+            if (screen.price > 0) {
+                isPriceValid = true;
+            }
+
+            if (isSeatsValid && isTypeValid && isPriceValid) {
+                this.screen = screen;
+                isSaved = true;
+            }
+        }
+
+        return isSaved;
+    }
+
+    public void getPVRDetails() {
+        System.out.println("PVR ID: " + this.pvrId);
+        System.out.println("PVR Name: " + this.pvrName);
+
+        System.out.println("Screen Seats: " + this.screen.seats);
+        System.out.println("Screen Type: " + this.screen.type);
+        System.out.println("Screen Price: " + this.screen.price);
     }
 }
